@@ -13,18 +13,18 @@
     .hh { fill: #9a6700; }
 
     .line { opacity: 0; animation: show 0.01s forwards; }
-    .cover { fill: #f6f8fa; transform-box: fill-box; animation: type 1s forwards; }
+    .cover { fill: #f6f8fa; }
     .caret { fill: #24292f; }
     .out { opacity: 0; animation: pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     .w { fill-opacity: 0; animation: word 0.3s ease-out forwards; }
-    .cursor { fill: #24292f; opacity: 0; animation: show 0.01s 6.3s forwards, blink 1.06s step-end 6.3s infinite; }
+    .cursor { fill: #24292f; opacity: 0; animation: show 0.01s 6.8s forwards, blink 1.06s step-end 6.8s infinite; }
 
     @keyframes show { to { opacity: 1; } }
     @keyframes hide { to { opacity: 0; } }
-    @keyframes type { to { transform: translateX(100%); } }
-    @keyframes caret1 { to { transform: translateX(54px); } }
-    @keyframes caret2 { to { transform: translateX(117px); } }
-    @keyframes caret3 { to { transform: translateX(126px); } }
+    /* Per-keystroke gaps generated from hand-picked delays so typing has an uneven, human rhythm */
+    @keyframes type1 { 0% { transform: translateX(0); } 22.22% { transform: translateX(9px); } 35.19% { transform: translateX(18px); } 52.78% { transform: translateX(27px); } 63.89% { transform: translateX(36px); } 84.26% { transform: translateX(45px); } 100% { transform: translateX(54px); } }
+    @keyframes type2 { 0% { transform: translateX(0); } 9.17% { transform: translateX(9px); } 14.58% { transform: translateX(18px); } 21.25% { transform: translateX(27px); } 32.92% { transform: translateX(36px); } 40.42% { transform: translateX(45px); } 46.25% { transform: translateX(54px); } 55% { transform: translateX(63px); } 60% { transform: translateX(72px); } 67.08% { transform: translateX(81px); } 79.58% { transform: translateX(90px); } 87.5% { transform: translateX(99px); } 93.33% { transform: translateX(108px); } 100% { transform: translateX(117px); } }
+    @keyframes type3 { 0% { transform: translateX(0); } 10.2% { transform: translateX(9px); } 17.25% { transform: translateX(18px); } 23.14% { transform: translateX(27px); } 27.84% { transform: translateX(36px); } 34.51% { transform: translateX(45px); } 47.06% { transform: translateX(54px); } 55.69% { transform: translateX(63px); } 61.18% { transform: translateX(72px); } 68.63% { transform: translateX(81px); } 73.73% { transform: translateX(90px); } 80% { transform: translateX(99px); } 88.24% { transform: translateX(108px); } 92.94% { transform: translateX(117px); } 100% { transform: translateX(126px); } }
     @keyframes pop {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
@@ -65,28 +65,28 @@
   <g class="line" style="animation-delay: 0.3s">
     <text class="prompt" x="22" y="70">$</text>
     <text x="40" y="70" textLength="54" lengthAdjust="spacing">whoami</text>
-    <rect class="cover" x="40" y="54" width="54" height="22" style="animation-duration: 0.6s; animation-timing-function: steps(6); animation-delay: 0.6s"/>
-    <rect class="caret" x="40" y="57" width="9" height="17" style="animation: caret1 0.6s steps(6) 0.6s forwards, hide 0.01s 1.45s forwards"/>
+    <rect class="cover" x="40" y="54" width="54" height="22" style="animation: type1 0.54s step-end 0.65s forwards"/>
+    <rect class="caret" x="40" y="57" width="9" height="17" style="animation: type1 0.54s step-end 0.65s forwards, hide 0.01s 1.45s forwards"/>
   </g>
   <text class="out" x="22" y="94" style="animation-delay: 1.45s">0pStack <tspan class="muted">·</tspan> Student @ Medieinstitutet, Stockholm</text>
 
   <g class="line" style="animation-delay: 1.9s">
     <text class="prompt" x="22" y="128">$</text>
     <text x="40" y="128" textLength="117" lengthAdjust="spacing">cat stack.txt</text>
-    <rect class="cover" x="40" y="112" width="117" height="22" style="animation-duration: 1s; animation-timing-function: steps(13); animation-delay: 2.2s"/>
-    <rect class="caret" x="40" y="115" width="9" height="17" style="animation: caret2 1s steps(13) 2.2s forwards, hide 0.01s 3.45s forwards"/>
+    <rect class="cover" x="40" y="112" width="117" height="22" style="animation: type2 1.2s step-end 2.25s forwards"/>
+    <rect class="caret" x="40" y="115" width="9" height="17" style="animation: type2 1.2s step-end 2.25s forwards, hide 0.01s 3.7s forwards"/>
   </g>
-  <text class="out" x="22" y="152" style="animation-delay: 3.45s"><tspan class="ts w" style="animation-delay: 3.45s">TypeScript</tspan> <tspan class="muted w" style="animation-delay: 3.55s">·</tspan> <tspan class="react w" style="animation-delay: 3.55s">React</tspan> <tspan class="muted w" style="animation-delay: 3.65s">·</tspan> <tspan class="vite w" style="animation-delay: 3.65s">Vite</tspan> <tspan class="muted w" style="animation-delay: 3.75s">·</tspan> <tspan class="sol w" style="animation-delay: 3.75s">Solidity</tspan> <tspan class="muted w" style="animation-delay: 3.85s">·</tspan> <tspan class="hh w" style="animation-delay: 3.85s">Hardhat</tspan></text>
+  <text class="out" x="22" y="152" style="animation-delay: 3.7s"><tspan class="ts w" style="animation-delay: 3.7s">TypeScript</tspan> <tspan class="muted w" style="animation-delay: 3.8s">·</tspan> <tspan class="react w" style="animation-delay: 3.8s">React</tspan> <tspan class="muted w" style="animation-delay: 3.9s">·</tspan> <tspan class="vite w" style="animation-delay: 3.9s">Vite</tspan> <tspan class="muted w" style="animation-delay: 4s">·</tspan> <tspan class="sol w" style="animation-delay: 4s">Solidity</tspan> <tspan class="muted w" style="animation-delay: 4.1s">·</tspan> <tspan class="hh w" style="animation-delay: 4.1s">Hardhat</tspan></text>
 
-  <g class="line" style="animation-delay: 4.3s">
+  <g class="line" style="animation-delay: 4.55s">
     <text class="prompt" x="22" y="186">$</text>
     <text x="40" y="186" textLength="126" lengthAdjust="spacing">./now --status</text>
-    <rect class="cover" x="40" y="170" width="126" height="22" style="animation-duration: 1.05s; animation-timing-function: steps(14); animation-delay: 4.6s"/>
-    <rect class="caret" x="40" y="173" width="9" height="17" style="animation: caret3 1.05s steps(14) 4.6s forwards, hide 0.01s 5.9s forwards"/>
+    <rect class="cover" x="40" y="170" width="126" height="22" style="animation: type3 1.275s step-end 4.9s forwards"/>
+    <rect class="caret" x="40" y="173" width="9" height="17" style="animation: type3 1.275s step-end 4.9s forwards, hide 0.01s 6.4s forwards"/>
   </g>
-  <text class="out" x="22" y="210" style="animation-delay: 5.9s">Building with React + Solidity, one commit at a time</text>
+  <text class="out" x="22" y="210" style="animation-delay: 6.4s">Building with React + Solidity, one commit at a time</text>
 
-  <g class="line" style="animation-delay: 6.3s">
+  <g class="line" style="animation-delay: 6.8s">
     <text class="prompt" x="22" y="244">$</text>
   </g>
   <rect class="cursor" x="40" y="231" width="9" height="17"/>
