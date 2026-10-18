@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./terminal.svg?v=2" alt="0pStack: blockchain developer, Stockholm. Stack: TypeScript, React, Vite, Solidity, Hardhat." />
+  <img src="https://raw.githubusercontent.com/0pStack/0pStack/main/terminal.svg?v=3" alt="0pStack: blockchain developer, Stockholm. Stack: TypeScript, React, Vite, Solidity, Hardhat." />
 </p>
 
 <p align="center">
