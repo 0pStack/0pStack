@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./terminal.svg" alt="0pStack: student at Medieinstitutet, Stockholm. Stack: TypeScript, React, Vite, Solidity, Hardhat." />
+  <img src="./terminal.svg" alt="0pStack: blockchain developer at Medieinstitutet, Stockholm. Stack: TypeScript, React, Vite, Solidity, Hardhat." />
 </p>
 
 <p align="center">

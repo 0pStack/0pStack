@@ -68,7 +68,7 @@
     <rect class="cover" x="40" y="54" width="54" height="22" style="animation: type1 0.54s step-end 0.65s forwards"/>
     <rect class="caret" x="40" y="57" width="9" height="17" style="animation: type1 0.54s step-end 0.65s forwards, hide 0.01s 1.45s forwards"/>
   </g>
-  <text class="out" x="22" y="94" style="animation-delay: 1.45s">0pStack <tspan class="muted">·</tspan> Student @ Medieinstitutet, Stockholm</text>
+  <text class="out" x="22" y="94" style="animation-delay: 1.45s">0pStack <tspan class="muted">·</tspan> Blockchain Developer @ Medieinstitutet, Stockholm</text>
 
   <g class="line" style="animation-delay: 1.9s">
     <text class="prompt" x="22" y="128">$</text>
