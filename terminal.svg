@@ -14,15 +14,22 @@
 
     .line { opacity: 0; animation: show 0.01s forwards; }
     .cover { fill: #f6f8fa; transform-box: fill-box; animation: type 1s forwards; }
-    .out { opacity: 0; animation: pop 0.3s ease-out forwards; }
-    .cursor { fill: #24292f; opacity: 0; animation: show 0.01s 5.6s forwards, blink 1s step-end 5.6s infinite; }
+    .caret { fill: #24292f; }
+    .out { opacity: 0; animation: pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .w { fill-opacity: 0; animation: word 0.3s ease-out forwards; }
+    .cursor { fill: #24292f; opacity: 0; animation: show 0.01s 6.3s forwards, blink 1.06s step-end 6.3s infinite; }
 
     @keyframes show { to { opacity: 1; } }
+    @keyframes hide { to { opacity: 0; } }
     @keyframes type { to { transform: translateX(100%); } }
+    @keyframes caret1 { to { transform: translateX(54px); } }
+    @keyframes caret2 { to { transform: translateX(117px); } }
+    @keyframes caret3 { to { transform: translateX(126px); } }
     @keyframes pop {
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes word { to { fill-opacity: 1; } }
     @keyframes blink { 50% { opacity: 0; } }
 
     @media (prefers-color-scheme: dark) {
@@ -37,12 +44,13 @@
       .sol { fill: #ffa657; }
       .hh { fill: #e3b341; }
       .cover { fill: #0d1117; }
-      .cursor { fill: #e6edf3; }
+      .caret, .cursor { fill: #e6edf3; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .line, .out { opacity: 1; animation: none; }
-      .cover { display: none; }
+      .w { fill-opacity: 1; animation: none; }
+      .cover, .caret { display: none; }
       .cursor { opacity: 1; animation: none; }
     }
   </style>
@@ -55,25 +63,31 @@
   <text class="title" x="310" y="21" text-anchor="middle">atlas@0pStack: ~</text>
 
   <g class="line" style="animation-delay: 0.3s">
-    <text x="22" y="70"><tspan class="prompt">$</tspan> whoami</text>
-    <rect class="cover" x="38" y="54" width="58" height="22" style="animation-duration: 0.6s; animation-timing-function: steps(6); animation-delay: 0.6s"/>
+    <text class="prompt" x="22" y="70">$</text>
+    <text x="40" y="70" textLength="54" lengthAdjust="spacing">whoami</text>
+    <rect class="cover" x="40" y="54" width="54" height="22" style="animation-duration: 0.6s; animation-timing-function: steps(6); animation-delay: 0.6s"/>
+    <rect class="caret" x="40" y="57" width="9" height="17" style="animation: caret1 0.6s steps(6) 0.6s forwards, hide 0.01s 1.45s forwards"/>
   </g>
-  <text class="out" x="22" y="94" style="animation-delay: 1.4s">0pStack <tspan class="muted">·</tspan> Student @ Medieinstitutet, Stockholm</text>
+  <text class="out" x="22" y="94" style="animation-delay: 1.45s">0pStack <tspan class="muted">·</tspan> Student @ Medieinstitutet, Stockholm</text>
 
-  <g class="line" style="animation-delay: 1.8s">
-    <text x="22" y="128"><tspan class="prompt">$</tspan> cat stack.txt</text>
-    <rect class="cover" x="38" y="112" width="121" height="22" style="animation-duration: 1s; animation-timing-function: steps(13); animation-delay: 2.1s"/>
+  <g class="line" style="animation-delay: 1.9s">
+    <text class="prompt" x="22" y="128">$</text>
+    <text x="40" y="128" textLength="117" lengthAdjust="spacing">cat stack.txt</text>
+    <rect class="cover" x="40" y="112" width="117" height="22" style="animation-duration: 1s; animation-timing-function: steps(13); animation-delay: 2.2s"/>
+    <rect class="caret" x="40" y="115" width="9" height="17" style="animation: caret2 1s steps(13) 2.2s forwards, hide 0.01s 3.45s forwards"/>
   </g>
-  <text class="out" x="22" y="152" style="animation-delay: 3.3s"><tspan class="ts">TypeScript</tspan> <tspan class="muted">·</tspan> <tspan class="react">React</tspan> <tspan class="muted">·</tspan> <tspan class="vite">Vite</tspan> <tspan class="muted">·</tspan> <tspan class="sol">Solidity</tspan> <tspan class="muted">·</tspan> <tspan class="hh">Hardhat</tspan></text>
+  <text class="out" x="22" y="152" style="animation-delay: 3.45s"><tspan class="ts w" style="animation-delay: 3.45s">TypeScript</tspan> <tspan class="muted w" style="animation-delay: 3.55s">·</tspan> <tspan class="react w" style="animation-delay: 3.55s">React</tspan> <tspan class="muted w" style="animation-delay: 3.65s">·</tspan> <tspan class="vite w" style="animation-delay: 3.65s">Vite</tspan> <tspan class="muted w" style="animation-delay: 3.75s">·</tspan> <tspan class="sol w" style="animation-delay: 3.75s">Solidity</tspan> <tspan class="muted w" style="animation-delay: 3.85s">·</tspan> <tspan class="hh w" style="animation-delay: 3.85s">Hardhat</tspan></text>
 
-  <g class="line" style="animation-delay: 3.7s">
-    <text x="22" y="186"><tspan class="prompt">$</tspan> ./now --status</text>
-    <rect class="cover" x="38" y="170" width="130" height="22" style="animation-duration: 1s; animation-timing-function: steps(14); animation-delay: 4s"/>
+  <g class="line" style="animation-delay: 4.3s">
+    <text class="prompt" x="22" y="186">$</text>
+    <text x="40" y="186" textLength="126" lengthAdjust="spacing">./now --status</text>
+    <rect class="cover" x="40" y="170" width="126" height="22" style="animation-duration: 1.05s; animation-timing-function: steps(14); animation-delay: 4.6s"/>
+    <rect class="caret" x="40" y="173" width="9" height="17" style="animation: caret3 1.05s steps(14) 4.6s forwards, hide 0.01s 5.9s forwards"/>
   </g>
-  <text class="out" x="22" y="210" style="animation-delay: 5.2s">Building with React + Solidity, one commit at a time</text>
+  <text class="out" x="22" y="210" style="animation-delay: 5.9s">Building with React + Solidity, one commit at a time</text>
 
-  <g class="line" style="animation-delay: 5.6s">
-    <text x="22" y="244"><tspan class="prompt">$</tspan></text>
+  <g class="line" style="animation-delay: 6.3s">
+    <text class="prompt" x="22" y="244">$</text>
   </g>
   <rect class="cursor" x="40" y="231" width="9" height="17"/>
 </svg>
