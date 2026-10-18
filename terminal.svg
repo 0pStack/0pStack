@@ -1,0 +1,79 @@
+<svg width="620" height="262" viewBox="0 0 620 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #f6f8fa; stroke: #d0d7de; }
+    .bar { fill: #eaeef2; }
+    .title { fill: #57606a; font-size: 13px; }
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; font-size: 15px; fill: #24292f; }
+    .prompt { fill: #1a7f37; font-weight: 700; }
+    .muted { fill: #57606a; }
+    .ts { fill: #0969da; }
+    .react { fill: #1b7c83; }
+    .vite { fill: #8250df; }
+    .sol { fill: #953800; }
+    .hh { fill: #9a6700; }
+
+    .line { opacity: 0; animation: show 0.01s forwards; }
+    .cover { fill: #f6f8fa; transform-box: fill-box; animation: type 1s forwards; }
+    .out { opacity: 0; animation: pop 0.3s ease-out forwards; }
+    .cursor { fill: #24292f; opacity: 0; animation: show 0.01s 5.6s forwards, blink 1s step-end 5.6s infinite; }
+
+    @keyframes show { to { opacity: 1; } }
+    @keyframes type { to { transform: translateX(100%); } }
+    @keyframes pop {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; stroke: #30363d; }
+      .bar { fill: #161b22; }
+      .title, .muted { fill: #8b949e; }
+      text { fill: #e6edf3; }
+      .prompt { fill: #3fb950; }
+      .ts { fill: #58a6ff; }
+      .react { fill: #39c5cf; }
+      .vite { fill: #bc8cff; }
+      .sol { fill: #ffa657; }
+      .hh { fill: #e3b341; }
+      .cover { fill: #0d1117; }
+      .cursor { fill: #e6edf3; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .line, .out { opacity: 1; animation: none; }
+      .cover { display: none; }
+      .cursor { opacity: 1; animation: none; }
+    }
+  </style>
+
+  <rect class="bg" x="0.5" y="0.5" width="619" height="261" rx="10"/>
+  <path class="bar" d="M1 11a10 10 0 0 1 10-10h598a10 10 0 0 1 10 10v22H1z"/>
+  <circle cx="20" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="17" r="6" fill="#28c840"/>
+  <text class="title" x="310" y="21" text-anchor="middle">ruslan@0pStack: ~</text>
+
+  <g class="line" style="animation-delay: 0.3s">
+    <text x="22" y="70"><tspan class="prompt">$</tspan> whoami</text>
+    <rect class="cover" x="38" y="54" width="58" height="22" style="animation-duration: 0.6s; animation-timing-function: steps(6); animation-delay: 0.6s"/>
+  </g>
+  <text class="out" x="22" y="94" style="animation-delay: 1.4s">Ruslan <tspan class="muted">·</tspan> Student @ Medieinstitutet, Stockholm</text>
+
+  <g class="line" style="animation-delay: 1.8s">
+    <text x="22" y="128"><tspan class="prompt">$</tspan> cat stack.txt</text>
+    <rect class="cover" x="38" y="112" width="121" height="22" style="animation-duration: 1s; animation-timing-function: steps(13); animation-delay: 2.1s"/>
+  </g>
+  <text class="out" x="22" y="152" style="animation-delay: 3.3s"><tspan class="ts">TypeScript</tspan> <tspan class="muted">·</tspan> <tspan class="react">React</tspan> <tspan class="muted">·</tspan> <tspan class="vite">Vite</tspan> <tspan class="muted">·</tspan> <tspan class="sol">Solidity</tspan> <tspan class="muted">·</tspan> <tspan class="hh">Hardhat</tspan></text>
+
+  <g class="line" style="animation-delay: 3.7s">
+    <text x="22" y="186"><tspan class="prompt">$</tspan> ./now --status</text>
+    <rect class="cover" x="38" y="170" width="130" height="22" style="animation-duration: 1s; animation-timing-function: steps(14); animation-delay: 4s"/>
+  </g>
+  <text class="out" x="22" y="210" style="animation-delay: 5.2s">Building with React + Solidity, one commit at a time</text>
+
+  <g class="line" style="animation-delay: 5.6s">
+    <text x="22" y="244"><tspan class="prompt">$</tspan></text>
+  </g>
+  <rect class="cursor" x="40" y="231" width="9" height="17"/>
+</svg>
