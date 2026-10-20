@@ -3,10 +3,7 @@
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./kali.dark.svg">
-    <img alt="Kali Linux dragon in animated ASCII" src="./kali.svg" width="355">
-  </picture>
+  <img alt="Kali Linux dragon in animated ASCII" src="./kali.svg" width="355">
 </p>
 
 <sub>Kali ASCII art from <a href="https://ascii.rest/kali-linux/">ascii.rest</a> (MIT, see <a href="./kali.LICENSE">kali.LICENSE</a>).</sub>
